@@ -1,0 +1,135 @@
+{
+	"id": "ecd75447-7e03-ac14-8a71-f5449001493f",
+	"name": "Spring AmigosCode",
+	"description": "",
+	"order": [
+		"7b0bb791-cb46-8dc4-ed22-b2ac2b2c6a50",
+		"8f843585-a510-23c7-0596-4f33f1ef0149",
+		"84146886-624d-8660-c3c3-a0cf20cfcbbf",
+		"00202a41-5aa9-798a-3a17-20b6c951d2a2"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1613476495705,
+	"owner": "11142758",
+	"public": false,
+	"requests": [
+		{
+			"id": "00202a41-5aa9-798a-3a17-20b6c951d2a2",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/api/v1/student/3?name=Acchu&email=Acchu@ncr.com",
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "Acchu",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "Acchu@ncr.com",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613487320774,
+			"name": "Update students",
+			"description": "",
+			"collectionId": "ecd75447-7e03-ac14-8a71-f5449001493f",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "7b0bb791-cb46-8dc4-ed22-b2ac2b2c6a50",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/student",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613483522733,
+			"name": "Add User",
+			"description": " Add Student to DB",
+			"collectionId": "ecd75447-7e03-ac14-8a71-f5449001493f",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"name\": \"Arjun\",\r\n\t\"email\": \"Arjun1@gmail.com\",\r\n\t\"dob\": \"1995-12-17\"\r\n}"
+		},
+		{
+			"id": "84146886-624d-8660-c3c3-a0cf20cfcbbf",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/api/v1/student/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613485139024,
+			"name": "Delete User - Method 2",
+			"description": "Delete a user\n\n1) Here the value at the end of the url is \"PATH VARIALBE\"",
+			"collectionId": "ecd75447-7e03-ac14-8a71-f5449001493f",
+			"responses": []
+		},
+		{
+			"id": "8f843585-a510-23c7-0596-4f33f1ef0149",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/v1/student",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613483405215,
+			"name": "Delete User",
+			"description": "",
+			"collectionId": "ecd75447-7e03-ac14-8a71-f5449001493f",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"name\": \"Arjun\",\r\n\t\"email\": \"Arjun1@gmail.com\",\r\n\t\"dob\": \"1995-12-17\"\r\n}"
+		}
+	]
+}

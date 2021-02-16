@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class StudentService {
@@ -15,21 +16,9 @@ public class StudentService {
     this.studentRepository = studentRepository;
   }
 
-  //   @GetMapping("/getStudents")
   public List<Student> getStudents() {
     return studentRepository.findAll();
   }
-
-  /*
-  To add new user send POST req to- 
-  http://localhost:8080/api/v1/student
-  {
-    "name": "Arjun",
-    "email": "Arjun@gmail.com",
-    "dob": "1995-12-17"
-  }
-
-  */
 
   public void addNewStudent(Student student) {
     System.out.println("\n\nIn add Student : " + student);
@@ -85,6 +74,25 @@ public class StudentService {
       System.out.println("\n\nUser Does Not Exist!\n\n");
       throw new IllegalStateException(
         "Can't delete a user who deos not exists!"
+      );
+    }
+  }
+
+  public void updateStudent(Long studentId, String name, String email) {
+    if (name.strip().length() == 0 || email.strip().length() == 0) {
+      throw new IllegalStateException(
+        "Illegal update input! name and email can't be empty.'"
+      );
+    }
+
+    Boolean exists = studentRepository.findById(studentId).isPresent();
+
+    if (exists) {
+      studentRepository.setEmail(studentId, name, email);
+    } else {
+      System.out.println("\n\nUser Does Not Exist!\n\n");
+      throw new IllegalStateException(
+        "Can't update a user who deos not exists!"
       );
     }
   }
