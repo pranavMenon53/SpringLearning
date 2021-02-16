@@ -3,7 +3,8 @@ YouTube - https://www.youtube.com/watch?v=9SGDpanrc8U&t=1s
 
 Key Points:
 
-1. Have the spring jars
+1. Have the spring jars from -
+   https://repo.spring.io/release/org/springframework/spring/
 2. Install PLSQL from EDB
 
 Important Commands for PLSQL Shell

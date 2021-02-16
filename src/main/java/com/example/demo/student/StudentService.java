@@ -1,11 +1,8 @@
 package com.example.demo.student;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,32 +18,16 @@ public class StudentService {
   //   @GetMapping("/getStudents")
   public List<Student> getStudents() {
     return studentRepository.findAll();
-    // return List.of(
-    // new Student(
-    //   1L,
-    //   "Purnima",
-    //   21,
-    //   LocalDate.of(1999, Month.SEPTEMBER, 11),
-    //   "gnzsai@amazon.com"
-    // ),
-    // new Student(
-    //   2L,
-    //   "Pranav",
-    //   21,
-    //   LocalDate.of(1999, Month.OCTOBER, 8),
-    //   "SM185623@ncr.com"
-    // )
-    // );
   }
 
   /*
-  
+  To add new user send POST req to- 
   http://localhost:8080/api/v1/student
-{
-	"name": "Arjun",
-	"email": "Arjun@gmail.com",
-	"dob": "1995-12-17"
-}
+  {
+    "name": "Arjun",
+    "email": "Arjun@gmail.com",
+    "dob": "1995-12-17"
+  }
 
   */
 
@@ -60,13 +41,19 @@ public class StudentService {
     if (studentByEmail.isPresent()) {
       System.out.println("\n\nError! User Already Exists!\n");
       //Throw exception
-      throw new IllegalStateException("Can't add a user who exists!\n");
+      throw new IllegalStateException("Can't add a user who exists!");
     }
 
     studentRepository.save(student);
     System.out.println("\n");
   }
 
+  //********************************
+
+  //This block of code can also be used to delete a student from the DB.
+  //It Uses logic similar to the  "addNewStudent" function
+
+  /*
   public void deleteStudent(Student student) {
     System.out.println("\n\nIn delete Student : " + student + "\n\n");
     // Optional<Student>
@@ -84,5 +71,21 @@ public class StudentService {
 
     studentRepository.deleteStudentByEmail(student.getEmail());
     System.out.println("\n\nStudent Deleted\n\n");
+  }
+  */
+  //********************************
+
+  //This is the code provided in the lecture
+  public void deleteStudent(Long studentId) {
+    boolean exists = studentRepository.existsById(studentId);
+
+    if (exists) {
+      studentRepository.deleteById(studentId);
+    } else {
+      System.out.println("\n\nUser Does Not Exist!\n\n");
+      throw new IllegalStateException(
+        "Can't delete a user who deos not exists!"
+      );
+    }
   }
 }
