@@ -1,12 +1,12 @@
 # Demo Spring applicaiton with database functionality.
 
-# Allows you to create users, delete users and update users.
+RESTful Api that allows you to create users, delete users and update users.
 
 YouTube - https://www.youtube.com/watch?v=9SGDpanrc8U&t=1s
 
 # End Points -
 
-## Import the Spring AmigosCode.postman_collection.json file in postman
+### _Import the Spring AmigosCode.postman_collection.json file in postman_
 
 1. To get students from the DB -
 
@@ -44,6 +44,8 @@ YouTube - https://www.youtube.com/watch?v=9SGDpanrc8U&t=1s
    Owned by - http://www.luv2code.com/
 
 2. Install PLSQL from EDB
+
+3. In the "application.properties" file, provied your own username and password
 
 # Important Commands for PLSQL Shell
 
@@ -86,9 +88,9 @@ Notes -
 
 2.  We need to use @Transactional and @Modifying when we modify data in the DB. Example - delete, update
 
-Observations -
+# Observations -
 
-# These may be incorrect!
+### These may be incorrect!
 
 1. @Entity(Student.java) and @Configuration(StudentConfig) are executed when the application starts
 2. @PostMapping handling function arguments should have @RequestBody annotation. Refer StudentController for more.
