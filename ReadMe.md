@@ -34,7 +34,7 @@ YouTube - https://www.youtube.com/watch?v=9SGDpanrc8U&t=1s
 
 4. To modify users in the DB -
 
-   PUT req on http://localhost:8080/api/v1/student/3?name=<NAME HERE>&email=<EMAIL HERE>
+   PUT req on http://localhost:8080/api/v1/student/3?name=_NAME HERE_&email=_EMAIL HERE_
 
 # Key Points:
 
@@ -52,7 +52,7 @@ YouTube - https://www.youtube.com/watch?v=9SGDpanrc8U&t=1s
 1. \l - list of databases
 2. \du - list of database roles
 3. create database student;
-4. grant all privileges on database "student" to <ROLE-NAME>;
+4. grant all privileges on database "student" to _ROLE-NAME_;
 5. \c student - connect to database "student"
 6. \d - describe
 
@@ -62,8 +62,8 @@ YouTube - https://www.youtube.com/watch?v=9SGDpanrc8U&t=1s
 
 1. mvn clean
 2. mvn install
-3. To run the jar file in ./target => java -jar <FILE-NAME>.jar
-4. To run the jar file in ./target on a specific port => java -jar <FILE-NAME>.jar --server.port=<PORT-NUMBER>
+3. To run the jar file in ./target => java -jar _FILE-NAME_.jar
+4. To run the jar file in ./target on a specific port => java -jar _FILE-NAME_.jar --server.port=_PORT-NUMBER_
 
 Notes -
 
